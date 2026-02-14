@@ -1,0 +1,190 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FDF8F9;
+    /* Молочно-розовый фон */
+    color: #4A3F44;
+    /* Мягкий серо-коричневый для текста */
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* --- Шапка (Header) --- */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F1DFE3;
+    /* Тонкая линия в тон */
+}
+
+.logo h1 {
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    color: #AC7B8A;
+    /* Приглушенный розовый */
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #A48E95;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.contacts {
+    font-size: 1rem;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #8C6A76;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #D48B9F;
+    /* Чуть ярче при наведении */
+}
+
+.separator {
+    color: #D9B4BF;
+    margin: 0 10px;
+}
+
+/* --- Сетка меню (Grid) --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px 25px;
+    margin-bottom: 60px;
+}
+
+.menu-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-6px);
+}
+
+.image-wrapper {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 18px;
+    overflow: hidden;
+    /* Чтобы скругление работало для фото */
+    box-shadow: 0 8px 18px -8px rgba(172, 123, 138, 0.2);
+    /* Легкая тень розового оттенка */
+    background-color: #FAE8EB;
+    /* Фон на случай, если изображение не загрузится */
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    /* Соотношение сторон для единообразия */
+    object-fit: cover;
+    /* Кадрирование, если картинка не подходит по размеру */
+}
+
+.menu-item h3 {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #B38493;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #7A6A70;
+    font-weight: 300;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* --- Подвал (Footer) --- */
+.footer {
+    border-top: 1px solid #F1DFE3;
+    padding-top: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #9C858E;
+}
+
+.footer a {
+    color: #B38493;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-email {
+    font-weight: 400;
+}
+
+/* --- Адаптация под мобильные устройства --- */
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .contacts {
+        font-size: 0.95rem;
+    }
+
+    .separator {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-grid {
+        gap: 30px;
+    }
+}
